@@ -69,6 +69,7 @@ if __name__ == "__main__":
         openai_api_key=os.getenv("OPENROUTER_API_KEY"),
         openai_api_base=os.getenv("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"),
         temperature=0,
+        stop=["\nObservation", "Observation"],
         callbacks=[AgentCallbackHandler()],
     )
     
