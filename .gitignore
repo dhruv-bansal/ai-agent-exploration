@@ -3,3 +3,4 @@
 .idea/*
 *.env
 react-agent/ice_breaker.egg-info/
+__pycache__/

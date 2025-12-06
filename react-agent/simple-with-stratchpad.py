@@ -8,6 +8,8 @@ from langchain_core.prompts import PromptTemplate
 from langchain_core.tools import Tool, render_text_description, tool
 from langchain_openai import ChatOpenAI
 
+from callbacks import AgentCallbackHandler
+
 load_dotenv()
 
 
@@ -67,6 +69,7 @@ if __name__ == "__main__":
         openai_api_key=os.getenv("OPENROUTER_API_KEY"),
         openai_api_base=os.getenv("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"),
         temperature=0,
+        callbacks=[AgentCallbackHandler()],
     )
     
     intermediate_steps = []
